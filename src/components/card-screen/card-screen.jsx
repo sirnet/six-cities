@@ -1,30 +1,33 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-const CardScreen = (props) => {
-  //const {errorsCpount} = props;
 
+const CardScreen = ({card}) => {
+  const {marker, href, img, price, atribute, type, rating, bookmark, tittle} = card;
+  console.log(bookmark)
   const divStyle = {
     width: '80%',
   }
 
   return (
+
     <article className="cities__place-card place-card">
-                  <div className="place-card__mark">
-                    <span>Premium</span>
-                  </div>
+                  {marker && <div className="place-card__mark">
+                      <span>{marker}</span>
+                    </div>
+                  }
                   <div className="cities__image-wrapper place-card__image-wrapper">
-                    <a href="#">
-                      <img className="place-card__image" src="img/apartment-01.jpg" width="260" height="200" alt="Place image"/>
+                    <a href={href}>
+                      <img className="place-card__image" src={img} width="260" height="200" alt="Place image"/>
                     </a>
                   </div>
                   <div className="place-card__info">
                     <div className="place-card__price-wrapper">
                       <div className="place-card__price">
-                        <b className="place-card__price-value">&euro;120</b>
-                        <span className="place-card__price-text">&#47;&nbsp;night</span>
+                        <b className="place-card__price-value">&euro;{price}</b>
+                        <span className="place-card__price-text">&#47;&nbsp;{atribute}</span>
                       </div>
-                      <button className="place-card__bookmark-button button" type="button">
+                      <button className={bookmark ? "place-card__bookmark-button place-card__bookmark-button--active button" : "place-card__bookmark-button button"} type="button">
                         <svg className="place-card__bookmark-icon" width="18" height="19">
                           <use xlinkHref="#icon-bookmark"></use>
                         </svg>
@@ -38,11 +41,12 @@ const CardScreen = (props) => {
                       </div>
                     </div>
                     <h2 className="place-card__name">
-                      <a href="#">Beautiful &amp; luxurious apartment at great location</a>
+                      <a href={href}>{tittle}</a>
                     </h2>
                     <p className="place-card__type">Apartment</p>
                   </div>
       </article>
+
   );
 };
 
