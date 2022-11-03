@@ -1,5 +1,12 @@
-function App(): JSX.Element {
-  return <p>Hello, world!</p>;
+import MainScreen from "../../pages/main-screen/main-screen";
+import { Offer } from "../../types/offer-date/offer-date";
+
+type AppOfferDate = {
+  offerDate: Offer[];
+}
+
+const App = ({offerDate}:AppOfferDate): JSX.Element => {
+  return <MainScreen offerDate = {offerDate}/>
 }
 
 export default App;
