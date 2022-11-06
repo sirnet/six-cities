@@ -1,4 +1,4 @@
-import MainScreen from "../../pages/main-screen/main-screen";
+import MainScreen from "../../pages/main/main";
 import { Offer } from "../../types/offer-date/offer-date";
 
 type AppOfferDate = {

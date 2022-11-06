@@ -1,6 +1,6 @@
 import { Offer } from "./types/offer-date/offer-date"
 
-const OfferDate:Offer[] = [
+export const OfferDate:Offer[] = [
   {
     id : '0',
     marker : 'Premium',
@@ -58,4 +58,9 @@ const OfferDate:Offer[] = [
   }
 ]
 
-export {OfferDate};
+export enum AppRute {
+  Main = '/',
+  Login = '/login',
+  Favorites = '/favorites',
+  Room = '/offer'
+}

@@ -1,6 +1,7 @@
 import CardScreen from "../../components/card-screen/card-screen";
 import {Offer} from "../../types/offer-date/offer-date"
-
+import HeaderComponent from "../../components/header-screen/header-screen"
+import FooterPage from "../../pages/footer-page/footer-page";
 type MainScreenOfferDate = {
   offerDate: Offer[];
 }
@@ -8,6 +9,8 @@ type MainScreenOfferDate = {
 const MainScreen = ({offerDate}:MainScreenOfferDate) : JSX.Element => {
 
   return (
+    <div className="page page--gray page--main">
+      <HeaderComponent />
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
         <div className="tabs">
@@ -76,6 +79,8 @@ const MainScreen = ({offerDate}:MainScreenOfferDate) : JSX.Element => {
           </div>
         </div>
       </main>
+      <FooterPage/>
+      </div>
   );
 }
 
