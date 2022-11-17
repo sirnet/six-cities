@@ -58,8 +58,8 @@ export const OfferDate:Offer[] = [
   }
 ]
 
-export enum AppRute {
-  Main = '/',
+export enum AppRoute {
+  Root = '/',
   Login = '/login',
   Favorites = '/favorites',
   Room = '/offer'
